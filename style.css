@@ -1,0 +1,654 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap");
+@font-face {
+  font-family: "NUSAR";
+  src: url(/assets/fonts/NUSAR/NUSAR.ttf);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fedcc8;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scrollbar-width: 0px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.sapreater {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(219, 213, 213, 0.4);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Navbar */
+
+/* desktop view  */
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(189, 184, 184, 0.443);
+  padding: 3px;
+  border-radius: 25px;
+}
+.desktop_nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desktop_nav_bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  margin-right: 8px;
+}
+
+.desktop_nav_list {
+  background-color: #2d112b;
+  box-shadow: 2px 2px 0.5px #5a0030;
+  border-radius: 20px;
+  margin-right: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+.desktop_nav_icon {
+  text-decoration: none;
+  font-family: "Bungee Spice", sans-serif;
+  font-size: medium;
+  text-align: center;
+}
+
+/* mobile view */
+
+.mobile_nav {
+  display: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.mobile_icon {
+  width: 2.75rem;
+  height: 2rem;
+  color: #f44c3a;
+}
+
+.mobile_icon[name="close-outline"] {
+  display: none;
+}
+
+/* responsive Navbar view */
+
+@media (max-width: 51.25em) {
+  .mobile_nav {
+    display: block;
+    z-index: 999;
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    box-shadow: 2px 2px #5a0030;
+  }
+
+  .desktop_nav {
+    width: 100%;
+    height: 100vh;
+    background-color: #2d112b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* trasition for mobile */
+
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .desktop_nav_bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .desktop_nav_list {
+    margin-top: 20px;
+    background-color: #2d2d2d;
+    box-shadow: 2px 2px 0.5px #5a0030;
+  }
+
+  .active .desktop_nav {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .active .mobile_nav .mobile_icon[name="close-outline"] {
+    display: block;
+  }
+
+  .active .mobile_nav .mobile_icon[name="menu-outline"] {
+    display: none;
+  }
+}
+
+/* Heros section */
+
+.hero {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  color: #5a0030;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.hero marquee {
+  text-align: center;
+  font-family: "NUSAR";
+  margin-top: 10px;
+  color: #e88000;
+  font-style: bold;
+  font-weight: bolder;
+  background-color: #2d112b;
+  font-size: 40px;
+  margin-right: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: scroll 7s linear infinite;
+}
+
+.hero_text {
+  text-align: center;
+  font-size: x-large;
+}
+
+.hero h1 {
+  text-align: center;
+  font-family: "Bungee Spice", sans-serif;
+  font-size: 40px;
+  margin-right: 15px;
+  width: 100%;
+}
+
+.hero h2 {
+  text-align: center;
+  font-family: "Protest Guerrilla", sans-sarif;
+  font-size: 30px;
+  margin-right: 15px;
+  color: #5a0030;
+}
+.register {
+  margin-right: 10px;
+}
+.ticket {
+  margin-left: 10px;
+}
+.hero-button {
+  display: inline-block;
+  background-color: #2d112b;
+  font-family: "Bungee Spice", sans-serif;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #2d2d2d;
+  transform: scale(1.05);
+}
+
+/* Responsive Hero */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .buttons{
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .hero marquee {
+    font-size: 20px;
+  }
+
+  .hero h2 {
+    font-size: 25px;
+  }
+
+  .hero-button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  .hero_card img {
+    height: 70vh;
+    width: 96%;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero h2 {
+    font-size: 20px;
+  }
+}
+
+/* Steps */
+
+.steps {
+  padding: 50px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+}
+
+.steps-heading {
+  text-align: center;
+  font-family: "NUSAR";
+  font-size: 20px;
+  width: 100%;
+  color: #5a0030;
+}
+.steps-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.steps-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 #5a0030;
+  margin-top: 15px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.steps-card img {
+  height: 150px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 #5a0030;
+}
+
+.steps-card h2{
+  font-family: "NUSAR";
+  font-size: 20px;
+  color: #5a0030;
+}
+
+.steps-card p{
+  font-family: "Cabin", sans-serif;
+  font-size: 15px;
+  color: #2d2d2d; 
+  line-height: 25px;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 1200px) {
+  .steps-container {
+    flex-direction: row;
+  }
+}
+
+.step-heading {
+  font-family: "NUSAR";
+  font-size: 20px;
+  color: #5a0030;
+}
+
+.step-number {
+  margin-right: 10px;
+}
+
+/* Animations */
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} 
+
+/* About Us */
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  margin: 0 2rem;
+}
+
+.about-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.about-image-container img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-image-container:hover img {
+  transform: scale(1.1);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #2d112b;
+  background-color: rgba(159, 82, 20, 0.7);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.about-image-container:hover .play-button {
+  opacity: 1;
+}
+
+.about-text {
+  flex: 1 1 400px;
+  margin: 0 2rem;
+}
+
+.about-text h1 {
+  font-size: 30px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "NUSAR";
+  color: #5a0030;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-family: "Cabin", sans-serif;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .about-image,
+  .about-text {
+    flex: 1 1 100%;
+  }
+
+  .about-image-container img {
+    width: 100%;
+  }
+}
+
+/* Schedule */
+
+.Schedule {
+  padding: 50px 0;
+}
+
+.Schedule-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.Schedule-heading h1 {
+  font-family: "NUSAR";
+  font-size: 30px;
+  color: #e88000;
+  background-color: #2d112b;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 #5a0030;
+  border-radius: 20px;
+  
+}
+
+.Schedule-heading h2 {
+  color: #5a0030;
+  font-family: "Cabin", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.Schedule-container {
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #e88000;
+}
+
+.Schedule-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(50% - 25px);
+  background-color: rgba(204, 195, 195, 0.4);
+  justify-content: space-around;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  padding: 5px;
+}
+
+.Schedule-image {
+  border-radius: 15px;
+  height: 200px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 #2d112b;
+}
+
+.Schedule-container-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.know-more-button {
+  display: inline-block;
+  align-items: center;
+  margin-top: 10px;
+  padding: 5px 15px;
+  background-color: #2d112b;
+  box-shadow: 0 4px 8px 0 #5a0030;
+  color: #fff;
+  border-radius: 5px;
+  font-family: "Bungee Spice", sans-serif;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.Schedule-button:hover {
+  background-color: #2d112b;
+}
+
+@media (max-width: 1200px) {
+  .Schedule-card {
+    width: calc(75% - 80px);
+  }
+  .button-container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .Schedule-button {
+    margin-top: 10px;
+  }
+  .Schedule-container {
+    align-items: center;
+    justify-content: center;
+  }
+  .Schedule-image {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 850px) {
+  .Schedule-card {
+    width: calc(85% - 80px);
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .Schedule-card {
+    width: 100%;
+  }
+}
+
+/* Footer */
+
+.footer {
+  background-color: #2d112b;
+  color: #fff;
+  padding: 2rem 0;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 #5a0030;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fedcc8;
+  border-radius: 25px;
+  width: 90px;
+  height: 50px;
+  text-align: center;
+}
+
+.footer-logo img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.64rem;
+}
+
+.footer-logo h1 {
+  text-align: center;
+}
+
+.footer-social-media {
+  display: flex;
+  align-items: center;
+}
+
+.footer-social-media h2 {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: #fedcc8;
+}
+
+.footer-social-media a {
+  color: #fedcc8;
+  font-size: 2rem;
+  margin-right: 1rem;
+  transition: transform 0.2s;
+}
+
+.footer-social-media a:hover {
+  transform: translateY(-5px);
+}
+
+@media screen and (max-width: 870px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo,
+  .footer-social-media {
+    margin-top: 1rem;
+  }
+
+  .footer-logo img {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .footer-social-media h2 {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
